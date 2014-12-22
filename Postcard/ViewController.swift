@@ -18,6 +18,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mailButton: UIButton!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,8 +29,7 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        //Adding a comment here to test commits.
-        //2nd new comment.
+        
     }
 
     @IBAction func SendMailButtonPressed(sender: UIButton) {
@@ -36,8 +38,16 @@ class ViewController: UIViewController {
     MessageLabel.text = EnterMessageTextField.text
     MessageLabel.textColor = UIColor.redColor()
         
+        
     EnterMessageTextField.text = ""
     EnterMessageTextField.resignFirstResponder()
+        
+    nameLabel.hidden = false
+    nameLabel.text = EnterNameTextField.text
+    nameLabel.textColor = UIColor.blueColor()
+        
+    EnterNameTextField.text = ""
+    EnterNameTextField.resignFirstResponder()
         
     mailButton.setTitle("Mail Sent",forState: UIControlState.Normal)
       
